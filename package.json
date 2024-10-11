@@ -1,26 +1,37 @@
 {
   "name": "frontend",
   "private": false,
-  "description": "A modern minimal Vite 5 + React 18 + TypeScript template with pre-configured ESLint (with Airbnb JS/React rules), Prettier, Vitest and Git hooks with Husky out of the box 📦",
+  "description": "Web application for creating notes on various topics.",
   "version": "2.0.0",
   "type": "module",
   "license": "MIT",
   "author": {
-    "name": "Patrick Jean Meurer",
-    "email": "patrickjmeurer@gmail.com",
-    "url": "https://github.com/potreco"
+    "name": "Victor Maznichenko",
+    "email": "victor_maznichenko@mail.ru",
+    "url": "https://github.com/Victor-Maznichenko"
   },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:scripts": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:styles": "stylelint ./src/**/*.scss",
     "format": "prettier .  --write",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch ": "vitest",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "bun run test",
+      "bun run lint:scripts",
+      "bun run lint:styles"
+    ]
+  },
   "dependencies": {
+    "atomic-router": "^0.10.1",
+    "effector": "^23.2.2",
+    "patronum": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -35,6 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.2.0",
+    "axios": "^1.7.7",
     "eslint": "^8.54.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -47,7 +59,11 @@
     "eslint-plugin-react-refresh": "^0.4.4",
     "husky": "^8.0.0",
     "jsdom": "^23.0.0",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.1.0",
+    "sass-embedded": "^1.79.4",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
     "vite-plugin-eslint": "^1.8.1",

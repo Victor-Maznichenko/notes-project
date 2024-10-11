@@ -1,0 +1,45 @@
+:root {
+    /* 
+    === Colors ===
+    */
+    --white: #ffffff;
+    --black: #000000;
+    --indigo-dark: #3730a3;
+    --indigo-light: #4f46e5;
+
+    // Light theme styles
+    --background: #edeef0;
+    --background-60: #edeef099;
+    --background-content: #ffffff;
+    --background-secondary: #f5deff;
+    --background-ui: #f0f2f5;
+    --base-text-color: #141414;
+    --error-text-color: #ff0000;
+
+    // Dark theme styles
+    [data-theme='Dark'] {
+        --background: #141414;
+        --background-60: #14141499;
+        --background-content: #222222;
+        --base-text-color: #fff;
+        --error-text-color: #e35a5a;
+        --background-secondary: #535353;
+        --background-ui: #333333;
+    }
+
+    /* 
+    === Layers ===  
+    */
+    --z-over: 1;
+    --z-under: -1;
+    --z-second-over: 2;
+
+    /* 
+    === Transitions ===
+    */
+    --trans-fast: 0.3s ease;
+
+    /* 
+    === Fonts ===
+    */
+}
